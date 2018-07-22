@@ -1,0 +1,6 @@
+#eclipse
+*.class
+*.project
+*.settings
+bin
+build
