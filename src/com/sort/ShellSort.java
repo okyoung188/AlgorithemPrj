@@ -2,12 +2,6 @@ package com.sort;
 
 import com.tool.ToolUtils;
 
-/**
- * Ï£¶ûÅÅÐò
- * 
- * @author Administrator
- *
- */
 public class ShellSort {
 
 	public static void main(String[] args) {
@@ -21,12 +15,12 @@ public class ShellSort {
 	private static void method1(int[] array) {
 
 		array = ToolUtils.copy(array);
-		// ÅÅÐò¼ä¸ô
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		int h = 1;
 		while (h < 10) {
 			h = 3 * h + 1;
 		}
-		// ×îºóÒ»´ÎÑ­»·Ê±£¬h=1,»¯Îª²åÈëÅÅÐò
+		// ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ñ­ï¿½ï¿½Ê±ï¿½ï¿½h=1,ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		while (h >= 1) {
 			for (int out = 0; out < h; out++) {
 				for (int in = out + h; in < array.length; in += h) {
@@ -49,12 +43,12 @@ public class ShellSort {
 
 	static void method2(int[] array) {
 		array = ToolUtils.copy(array);
-		// ÅÅÐò¼ä¸ô
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		int h = 1;
 		while (h < 10) {
 			h = 3 * h + 1;
 		}
-		// ×îºóÒ»´ÎÑ­»·Ê±£¬h=1,»¯Îª²åÈëÅÅÐò
+		// ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ñ­ï¿½ï¿½Ê±ï¿½ï¿½h=1,ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		while (h >= 1) {
 			for (int out = 0; out < h; out++) {
 				for (int in = out; in + h < array.length; in += h) {
@@ -78,17 +72,17 @@ public class ShellSort {
 	
 	static void method3(int[] array){
 		array = ToolUtils.copy(array);
-		// ÅÅÐò¼ä¸ô
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		int h = 1;
 		while (h < 10) {
 			h = 3 * h + 1;
 		}
 		while(h > 0){
-			//out¾Í±íÊ¾ÒªÅÅÐòµÄµÚÒ»¸öÊý
+			//outï¿½Í±ï¿½Ê¾Òªï¿½ï¿½ï¿½ï¿½Äµï¿½Ò»ï¿½ï¿½ï¿½ï¿½
 			for (int out=h;out<array.length;out++){		
 				int in=out;
 			    int temp = array[in];
-			    //inµÄÎ»ÖÃÎª¿ÕÎ»ÖÃ,´ýÅÅµÄÎ»ÖÃ
+			    //inï¿½ï¿½Î»ï¿½ï¿½Îªï¿½ï¿½Î»ï¿½ï¿½,ï¿½ï¿½ï¿½Åµï¿½Î»ï¿½ï¿½
 				while(in > h-1 && array[in-h]>temp){
 					array[in]=array[in-h];
 					in-=h;
