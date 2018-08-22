@@ -7,6 +7,7 @@ public class QuickSort {
 	public static void main(String[] args) {
 		int[] array = { 2, 9, 22, 12, 4, 3, 6, 7, 3, 0, 1, -1 };
 		method1(array);
+		method2(array);
 	}
 
 	private static void method1(int[] param) {
@@ -87,6 +88,84 @@ public class QuickSort {
 		}
 		ToolUtils.swap(array, pivot, leftIndex);
 		return leftIndex;
+	}
+	
+	
+	/*--------------------------------------------
+	 * 
+	 * 第二种方法
+	----------------------------------------------*/
+    static void method2(int[] param){
+		int[] array = ToolUtils.copy(param);
+		sort2(array, 0, array.length - 1);
+		ToolUtils.print(array);
+	}
+
+    //recursive sort,left right表示需要排序的index
+	private static void sort2(int[] array, int left, int right) {
+		//1.abnormal array length
+		if(array == null || array.length == 1|| left >= right|| left <0 || right >array.length -1){
+			return;
+		}		
+		//2.array length==2
+		if(left == right -1){
+			if(array[left]> array[right]){
+				ToolUtils.swap(array, left, right);
+			}			
+			return;
+		}
+		
+		//3.array length > 2 
+		//find pivot
+		int middle = (left+right)/2;
+		int pivotIndex = 0;
+		if(array[left]>= array[middle]){
+			if(array[right] >= array[middle]){
+				if(array[right] >= array[left]){
+					pivotIndex = left;
+				} else {
+					pivotIndex = right;
+				}
+			} else {
+				pivotIndex = middle;
+			}
+		} else{
+			if(array[right] >= array[middle]){
+				pivotIndex = middle;
+			} else {
+				if(array[right] >= array[left]){
+					pivotIndex = right;
+				} else{
+					pivotIndex = left;
+				}
+			}
+		}
+		ToolUtils.swap(array, pivotIndex, right);
+		//partition with pivot		
+		int leftRef = left;
+		int rightRef = right;
+		leftRef--;
+		while(true){
+			while(array[++leftRef] < array[right]&& leftRef <rightRef){
+			}
+			while(array[--rightRef] >= array[right] && leftRef <rightRef){				
+			}
+			if(leftRef>= rightRef){
+				break;
+			}
+			ToolUtils.swap(array, leftRef, rightRef);
+		}
+		
+		ToolUtils.swap(array, rightRef, right);		
+		int partitionIndex = leftRef;
+		
+		//recursive sort with partition index
+		sort(array, left, partitionIndex - 1);
+		sort(array, partitionIndex + 1, right);		
+	}
+	
+	static void partition1(){
+		
 	}
 
 }
