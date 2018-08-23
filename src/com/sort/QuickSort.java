@@ -7,7 +7,7 @@ public class QuickSort {
 	public static void main(String[] args) {
 		int[] array = { 2, 9, 22, 12, 4, 3, 6, 7, 3, 0, 1, -1 };
 		method1(array);
-		method2(array);
+		method2(ToolUtils.generateArray(50));
 	}
 
 	private static void method1(int[] param) {
