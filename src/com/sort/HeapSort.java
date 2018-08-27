@@ -3,7 +3,7 @@ package com.sort;
 import com.tool.ToolUtils;
 
 /**
- * 堆排序
+ * 堆排序，与书上的差别在于构建堆和向下传递实现不同
  * @author Harry.Yang
  * 2018年8月26日 下午10:22:00
  */
@@ -20,7 +20,7 @@ public class HeapSort {
 			return;
 		}
 		int length = array.length;
-		//构建堆
+		//构建堆，可用递归改写
 		int trickleIndex = array.length/2-1;
 		while(trickleIndex>=0){
 		    int leftChild = trickleIndex*2+1;
@@ -59,7 +59,7 @@ public class HeapSort {
 		
 	}
 	
-	//向下传递
+	//向下传递，可用循环改写
 	private static void trickleDown(int[] array, int trickleIndex,int range){		
 		int leftChild = trickleIndex*2+1;
 	    int rightChild = trickleIndex *2 +2;

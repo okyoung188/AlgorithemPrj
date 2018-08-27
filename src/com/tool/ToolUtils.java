@@ -3,6 +3,8 @@ package com.tool;
 import java.util.Arrays;
 import java.util.Random;
 
+import com.utilclass.Node;
+
 public class ToolUtils {
 	
 	public static void swap(int[] array,int i, int j) {
@@ -13,6 +15,13 @@ public class ToolUtils {
 	
 	public static void print(int[] array){
 		System.out.println(Arrays.toString(array));
+	}
+	
+	public static void printTree(Node root){
+		if(root == null){
+			return;
+		}
+		
 	}
 	
 	public static int[] copy(int[] array){
