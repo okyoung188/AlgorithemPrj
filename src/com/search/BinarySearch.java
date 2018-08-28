@@ -1,6 +1,10 @@
 package com.search;
 
-
+/**
+ * 
+ * @author Harry.Yang
+ * 2018年8月28日 下午10:18:16
+ */
 public class BinarySearch {
 	
 	public static void main(String[] args) {
